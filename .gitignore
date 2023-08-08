@@ -40,3 +40,4 @@ compile_flags.txt
 # Output
 DebugLogFile.txt
 LatencyLogFile.txt
+test.txt

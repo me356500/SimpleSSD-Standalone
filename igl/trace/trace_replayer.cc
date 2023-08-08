@@ -51,6 +51,8 @@ TraceReplayer::TraceReplayer(Engine &e, BIL::BlockIOEntry &b,
   // Create regex
   try {
     regex = std::regex(c.readString(CONFIG_TRACE, TRACE_LINE_REGEX));
+    //std::regex tmp("\\w+\\s\\d+\\s\\d+\\n");
+    //regex = tmp;
   }
   catch (std::regex_error &e) {
     SimpleSSD::panic("Invalid regular expression!");
@@ -295,12 +297,10 @@ void TraceReplayer::parseLine() {
 
     if (eof) {
       reserveTermination = true;
-
       if (io_depth == 0) {
         // No on-the-fly I/O
         endCallback();
       }
-
       return;
     }
     if (std::regex_match(line, match, regex)) {
