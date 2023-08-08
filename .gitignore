@@ -38,4 +38,5 @@ compile_flags.txt
 *.code-workspace
 
 # Output
-output/
+DebugLogFile.txt
+LatencyLogFile.txt
