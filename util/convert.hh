@@ -23,7 +23,7 @@
 #define __UTIL_CONVERT__
 
 #include <cinttypes>
-
+#include <cstring>
 #ifdef _MSC_VER
 #define strcasecmp _stricmp
 #endif

@@ -413,7 +413,9 @@ void cmdScheduler::analyticalScheduling(const MemorySpecification& memSpec)
 
     // make sure the scheduled commands are stored with an ascending scheduling time
     sort(cmdScheduling.begin(), cmdScheduling.end(),
-         commandItem::commandItemSorter());
+         [](const commandItem& lhs, const commandItem &rhs) {
+          return lhs.time < rhs.time;
+         });
 
     // write the scheduled commands into commands.txt.
     for (unsigned i = 0; i < cmdScheduling.size(); i++) {
