@@ -40,5 +40,5 @@ compile_flags.txt
 # Output
 DebugLogFile.txt
 LatencyLogFile.txt
-test.txt
 test*.txt
+rawfile942G_simple_LUN*.txt
