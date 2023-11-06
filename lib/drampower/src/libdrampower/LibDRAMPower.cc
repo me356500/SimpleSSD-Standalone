@@ -80,14 +80,14 @@ void libDRAMPower::updateCounters(bool lastUpdate, int64_t timestamp)
 void libDRAMPower::calcEnergy()
 {
   updateCounters(true);
-  mpm.power_calc(memSpec, counters, includeIoAndTermination, bwPowerParams);
+  //mpm.power_calc(memSpec, counters, includeIoAndTermination, bwPowerParams);
 }
 
 void libDRAMPower::calcWindowEnergy(int64_t timestamp)
 {
   doCommand(MemCommand::NOP, 0, timestamp);
   updateCounters(false, timestamp);
-  mpm.power_calc(memSpec, counters, includeIoAndTermination, bwPowerParams);
+  //mpm.power_calc(memSpec, counters, includeIoAndTermination, bwPowerParams);
   clearCounters(timestamp);
 }
 
